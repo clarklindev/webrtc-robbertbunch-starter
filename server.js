@@ -1,4 +1,3 @@
-require('dotenv').config(); 
 const fs = require('fs');
 const https = require('https')
 const express = require('express');
@@ -21,13 +20,13 @@ const io = socketio(expressServer,{
     cors: {
         origin: [
             'https://localhost:8181',
-            'https://192.168.1.103:8181' //if using a phone or another computer
+            'https://192.168.1.101:8181' //if using a phone or another computer
         ],
         methods: ["GET", "POST"]
     }
 });
 expressServer.listen(8181, ()=>{
-    console.log(`listening on ${process.env.LOCAL_MACHINE_IP}:${process.env.PORT}`)
+    console.log(`listening on https://192.168.1.101:8181`)
 });
 
 //offers will contain {}
